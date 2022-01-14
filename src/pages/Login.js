@@ -32,7 +32,7 @@ export default class Login extends Component {
 
     this.setState({ isLoading: true });
 
-    await createUser({ name });
+    await createUser({ name }); // por ser uma Promise, utilizei async/await
 
     this.setState({
       isLoading: false,
