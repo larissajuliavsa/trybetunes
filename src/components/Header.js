@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
@@ -40,12 +41,19 @@ export default class Header extends Component {
         {isLoading ? (
           <Loading />
         ) : (
-          <header data-testid="header-component">
-            <p data-testid="header-user-name">
-              Welcome
-              {` ${login.name}`}
-            </p>
-          </header>
+          <>
+            <header data-testid="header-component">
+              <p data-testid="header-user-name">
+                Welcome
+                {` ${login.name}`}
+              </p>
+            </header>
+            <nav>
+              <Link data-testid="link-to-search" to="/search">Search</Link>
+              <Link data-testid="link-to-favorites" to="/favorites">My Favorites</Link>
+              <Link data-testid="link-to-profile" to="/profile">My Profile</Link>
+            </nav>
+          </>
         )}
       </div>
     );
