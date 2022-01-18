@@ -77,22 +77,20 @@ export default class Search extends Component {
               pesquisar
             </button>
             {searchList.length === 0 ? (
-              <span>Nenhum álbum foi encontrado</span>
+              <p>Nenhum álbum foi encontrado</p>
             ) : (
               <section>
-                <div>{`Resultado de álbuns de: ${keepName}`}</div>
-                <div>
-                  {searchList.map((search) => (
-                    <div key={ search.collectionId }>
-                      <Link
-                        data-testid={ `link-to-album-${search.collectionId}` }
-                        to={ `/album/${search.collectionId}` }
-                      >
-                        <span>{search.collectionName}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
+                <p>{`Resultado de álbuns de: ${keepName}`}</p>
+                {searchList.map((search) => (
+                  <div key={ search.collectionId }>
+                    <Link
+                      data-testid={ `link-to-album-${search.collectionId}` }
+                      to={ `/album/${search.collectionId}` }
+                    >
+                      <p>{search.collectionName}</p>
+                    </Link>
+                  </div>
+                ))}
               </section>
             )}
           </div>
