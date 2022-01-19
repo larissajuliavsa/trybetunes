@@ -42,7 +42,7 @@ export default class Album extends Component {
 
   render() {
     /*
-      Para entender o que esta props "musics" retornava, fiz um console.log(musics).
+      Para entender o que esta chave "musics" retornava, fiz um console.log(musics).
       Percebi que retornou um array vazio e logo depois, um array com 15 objetos. Para garantir que eu utilizasse esse array de objetos, fiz condicionais com esta props como está abaixo.
     */
 
@@ -64,6 +64,7 @@ export default class Album extends Component {
                 <MusicCard
                   trackName={ music.trackName }
                   previewUrl={ music.previewUrl }
+                  trackId={ music.trackId }
                 />
               </div>
             ),
