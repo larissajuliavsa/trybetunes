@@ -10,7 +10,6 @@ export default class MusicCard extends Component {
 
     this.state = {
       isLoading: false,
-      isChecked: false,
     };
 
     this.favoriteMusic = this.favoriteMusic.bind(this);
@@ -21,25 +20,22 @@ export default class MusicCard extends Component {
   */
 
   async favoriteMusic({ target }) {
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const { name } = target;
+    const { musics } = this.props;
 
-    this.setState({
-      [name]: value,
-      isLoading: true,
-    });
+    this.setState({ isLoading: true });
 
-    await addSong(name);
+    const musicList = musics.some((music) => music.trackId === target.checked);
 
-    this.setState({
-      isLoading: false,
-      isChecked: value,
-    });
+    console.log(musicList);
+
+    await addSong(musicList);
+
+    this.setState({ isLoading: false });
   }
 
   render() {
     const { previewUrl, trackName, trackId } = this.props;
-    const { isChecked, isLoading } = this.state;
+    const { isLoading } = this.state;
 
     return (
       <div>
@@ -57,8 +53,8 @@ export default class MusicCard extends Component {
                 id={ trackId }
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
+                name={ trackId }
                 onChange={ this.favoriteMusic }
-                checked={ isChecked }
               />
             </label>
           </>

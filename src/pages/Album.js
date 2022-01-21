@@ -54,6 +54,7 @@ export default class Album extends Component {
         <div data-testid="page-album">
           {musics.length > 0 && (
             <>
+              <img src={ musics[0].artworkUrl100 } alt={ musics[0].collectionName } />
               <p data-testid="artist-name">{musics[0].artistName}</p>
               <p data-testid="album-name">{musics[0].collectionName}</p>
             </>
@@ -62,6 +63,7 @@ export default class Album extends Component {
             (music, index) => index > 0 && (
               <div key={ music.previewUrl }>
                 <MusicCard
+                  music={ musics.length > 0 }
                   trackName={ music.trackName }
                   previewUrl={ music.previewUrl }
                   trackId={ music.trackId }
