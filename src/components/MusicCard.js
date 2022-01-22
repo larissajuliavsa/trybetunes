@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { addSong } from '../services/favoriteSongsAPI';
+import {
+  addSong,
+  removeSong,
+} from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 export default class MusicCard extends Component {
@@ -10,32 +13,64 @@ export default class MusicCard extends Component {
 
     this.state = {
       isLoading: false,
+      isChecked: false,
     };
 
     this.favoriteMusic = this.favoriteMusic.bind(this);
+    this.handleChangeClick = this.handleChangeClick.bind(this);
+    this.loadingPage = this.loadingPage.bind(this);
   }
 
+  componentDidMount() {
+    this.loadingPage();
+  }
   /*
     Na função favoriteMusic(), eu desestruturei o evento { target } para verificar se o tipo 'checkbox' está clicado ou não e depois enviei este name e value para o setState. Enviei esta chave capturada pelo target para a função addSong() por parâmetro
   */
 
-  async favoriteMusic({ target }) {
-    const { musics } = this.props;
+  handleChangeClick({ target }) {
+    this.favoriteMusic(target);
 
-    this.setState({ isLoading: true });
+    this.setState((prevState) => ({
+      isChecked: !prevState.isChecked,
+    }));
+  }
 
-    const musicList = musics.some((music) => music.trackId === target.checked);
+  async favoriteMusic(target) {
+    const { music, listFave } = this.props;
 
-    console.log(musicList);
+    this.setState({ isLoading: true }, async () => {
+      if (target.checked) {
+        addSong(music);
+      } else {
+        removeSong(music);
+      }
 
-    await addSong(musicList);
+      await listFave();
 
-    this.setState({ isLoading: false });
+      this.setState({
+        isLoading: false,
+      });
+    });
+  }
+
+  loadingPage() {
+    const { favorites, trackId } = this.props;
+
+    const results = favorites.some(
+      (faveMusics) => faveMusics.trackId === trackId,
+    );
+
+    if (results) {
+      this.setState({
+        isChecked: true,
+      });
+    }
   }
 
   render() {
     const { previewUrl, trackName, trackId } = this.props;
-    const { isLoading } = this.state;
+    const { isLoading, isChecked } = this.state;
 
     return (
       <div>
@@ -53,8 +88,9 @@ export default class MusicCard extends Component {
                 id={ trackId }
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
-                name={ trackId }
-                onChange={ this.favoriteMusic }
+                name="checkbox"
+                onChange={ this.handleChangeClick }
+                checked={ isChecked }
               />
             </label>
           </>

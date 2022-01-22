@@ -14,6 +14,7 @@ export default class Search extends Component {
       keepName: '',
       isLoading: false,
       searchList: [], // a função searchAlbumsAPI() retorna um array de objetos
+      notFound: false,
     };
 
     this.inputChange = this.inputChange.bind(this);
@@ -21,7 +22,7 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    this.searchBand();
+    // this.searchBand();
   }
 
   inputChange({ target }) {
@@ -36,30 +37,34 @@ export default class Search extends Component {
     A função searchBand tem como objeto de capturar o valor da chave name e enviar para a API, para que retorne um objeto referente a este valor. Após esta requisição, limpei o nome desta chave name e guardei seu valor em outra chave, na keepName para que eu utilizasse no resultado da busca.
   */
 
-  async searchBand() {
+  async searchBand(e) {
+    e.preventDefault();
+
     const { name } = this.state;
 
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: true }, async () => {
+      const getAPI = await searchAlbumsAPI(name);
+      const verify = getAPI.length === 0;
 
-    const getAPI = await searchAlbumsAPI(name);
-
-    this.setState({
-      name: '',
-      keepName: name,
-      isLoading: false,
-      searchList: getAPI,
+      this.setState({
+        isLoading: false,
+        searchList: getAPI,
+        name: '',
+        keepName: name,
+        notFound: verify,
+      });
     });
   }
 
   render() {
-    const { name, keepName, isLoading, searchList } = this.state;
+    const { name, keepName, isLoading, searchList, notFound } = this.state;
     const MIN_LENGTH = 2;
     return (
-      <div>
+      <div data-testid="page-search">
         {isLoading ? (
           <Loading />
         ) : (
-          <div data-testid="page-search">
+          <div>
             <Header />
             <input
               type="text"
@@ -76,9 +81,8 @@ export default class Search extends Component {
             >
               pesquisar
             </button>
-            {searchList.length === 0 ? (
-              <p>Nenhum álbum foi encontrado</p>
-            ) : (
+            {notFound && <p>Nenhum álbum foi encontrado</p>}
+            {searchList.length > 0 && (
               <section>
                 <p>{`Resultado de álbuns de: ${keepName}`}</p>
                 {searchList.map((search) => (
@@ -87,6 +91,10 @@ export default class Search extends Component {
                       data-testid={ `link-to-album-${search.collectionId}` }
                       to={ `/album/${search.collectionId}` }
                     >
+                      <img
+                        src={ search.artworkUrl100 }
+                        alt={ search.collectionName }
+                      />
                       <p>{search.collectionName}</p>
                     </Link>
                   </div>

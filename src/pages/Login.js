@@ -19,6 +19,10 @@ export default class Login extends Component {
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState = () => {};
+  }
+
   onInputChange({ target }) {
     const { name, value } = target;
 
