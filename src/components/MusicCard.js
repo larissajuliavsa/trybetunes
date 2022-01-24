@@ -13,7 +13,7 @@ export default class MusicCard extends Component {
 
     this.state = {
       isLoading: false,
-      isChecked: false,
+      isChecked: false, // para verificar se o checkbox está checado
     };
 
     this.favoriteMusic = this.favoriteMusic.bind(this);
@@ -24,6 +24,7 @@ export default class MusicCard extends Component {
   componentDidMount() {
     this.loadingPage();
   }
+
   /*
     Na função favoriteMusic(), eu desestruturei o evento { target } para verificar se o tipo 'checkbox' está clicado ou não e depois enviei este name e value para o setState. Enviei esta chave capturada pelo target para a função addSong() por parâmetro
   */
@@ -39,6 +40,7 @@ export default class MusicCard extends Component {
   async favoriteMusic(target) {
     const { music, listFave } = this.props;
 
+    // para adicionar e remover a música dos favoritos
     this.setState({ isLoading: true }, async () => {
       if (target.checked) {
         addSong(music);
@@ -54,6 +56,7 @@ export default class MusicCard extends Component {
     });
   }
 
+  // para listar as músicas favoritadas no site ao carregar a página
   loadingPage() {
     const { favorites, trackId } = this.props;
 

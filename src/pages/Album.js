@@ -6,6 +6,10 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
+/*
+  O meu código estava dando erros que eu não sabia identificar o motivo, pedi ajuda através de uma thread no slack da turma. O Lucas Petzinger e a Rosalia Oliveira me ajudaram a arrumar o código e apontar melhorias neles, obrigada <3
+*/
+
 export default class Album extends Component {
   constructor() {
     super();
@@ -49,6 +53,7 @@ export default class Album extends Component {
   async listFavorites() {
     const request = await getFavoriteSongs();
 
+    // listar as músicas favoritas da função getFavoriteSongs() e enviar para o componente MusicCard
     this.setState({
       favorites: [...request],
     });

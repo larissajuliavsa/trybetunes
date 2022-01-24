@@ -14,7 +14,7 @@ export default class Search extends Component {
       keepName: '',
       isLoading: false,
       searchList: [], // a função searchAlbumsAPI() retorna um array de objetos
-      notFound: false,
+      notFound: false, // para retornar a frase "nenhum album encontrado"
     };
 
     this.inputChange = this.inputChange.bind(this);

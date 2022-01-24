@@ -19,6 +19,7 @@ export default class Login extends Component {
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
+  // Para evitar que ocorra um aviso no console referente ao componentWillUnmount()
   componentWillUnmount() {
     this.setState = () => {};
   }
