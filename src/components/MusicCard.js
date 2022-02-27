@@ -38,7 +38,7 @@ export default class MusicCard extends Component {
   }
 
   async favoriteMusic(target) {
-    const { music, listFave } = this.props;
+    const { music, listFave, unListFave } = this.props;
 
     // para adicionar e remover a música dos favoritos
     this.setState({ isLoading: true }, async () => {
@@ -49,6 +49,7 @@ export default class MusicCard extends Component {
       }
 
       await listFave();
+      await unListFave();
 
       this.setState({
         isLoading: false,

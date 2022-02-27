@@ -43,15 +43,22 @@ export default class Header extends Component {
         ) : (
           <>
             <header data-testid="header-component">
+              <h2>OnTrack</h2>
               <p data-testid="header-user-name">
                 Welcome
                 {` ${login.name}`}
               </p>
             </header>
             <nav>
-              <Link data-testid="link-to-search" to="/search">Search</Link>
-              <Link data-testid="link-to-favorites" to="/favorites">My Favorites</Link>
-              <Link data-testid="link-to-profile" to="/profile">My Profile</Link>
+              <Link data-testid="link-to-search" to="/search">
+                Albums
+              </Link>
+              <Link data-testid="link-to-favorites" to="/favorites">
+                My Favorites
+              </Link>
+              <Link data-testid="link-to-profile" to="/profile">
+                My Profile
+              </Link>
             </nav>
           </>
         )}

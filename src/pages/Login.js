@@ -11,11 +11,14 @@ export default class Login extends Component {
     super();
     this.state = {
       name: '',
+      password: '',
       isLoading: false,
       saved: false,
+      disable: true,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.validation = this.validation.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
@@ -27,9 +30,12 @@ export default class Login extends Component {
   onInputChange({ target }) {
     const { name, value } = target;
 
-    this.setState({
-      [name]: value,
-    });
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => this.validation(),
+    );
   }
 
   async onSaveButtonClick() {
@@ -45,9 +51,20 @@ export default class Login extends Component {
     });
   }
 
+  validation() {
+    const { name, password } = this.state;
+    const SIX = 6;
+    const FOUR = 4;
+    const validName = name.length < FOUR;
+    const validPassword = password.length < SIX;
+
+    this.setState({
+      disable: validName || validPassword,
+    });
+  }
+
   render() {
-    const MIN_LENGTH = 3;
-    const { name, isLoading, saved } = this.state;
+    const { name, password, isLoading, saved, disable } = this.state;
 
     return (
       <div>
@@ -57,21 +74,29 @@ export default class Login extends Component {
           <div data-testid="page-login">
             <form>
               <input
-                type="text"
+                type="email"
                 name="name"
+                value={ name }
                 placeholder="Name"
                 onChange={ this.onInputChange }
                 data-testid="login-name-input"
               />
+              <input
+                type="password"
+                name="password"
+                value={ password }
+                onChange={ this.onInputChange }
+                data-testid="login-password-input"
+              />
               <button
                 type="submit"
-                disabled={ name.length < MIN_LENGTH }
+                disabled={ disable }
                 onClick={ this.onSaveButtonClick }
                 data-testid="login-submit-button"
               >
                 Entrar
               </button>
-              {saved && <Redirect to="/search" />}
+              {saved && <Redirect to="/home" />}
             </form>
           </div>
         )}
