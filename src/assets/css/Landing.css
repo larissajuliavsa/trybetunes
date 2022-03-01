@@ -1,0 +1,118 @@
+
+@media screen and (max-width: 420px) {
+  
+  body {
+    text-transform: uppercase;    
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* CONTAINER MAIN */
+  .container-home {
+    margin: 30px auto;
+    border-radius: 12px;
+    width: 80%;
+    background-color: #202427;
+  }
+  
+  /* SEARCHBAR LATEST'S HITS */
+  .container-home-search-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-home-search-img p {
+    color: #f1f1f1;
+  }
+
+  .home-img {
+    width: 80%;
+    margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: #0a0b0c64 0px 8px 24px;
+  }
+
+  .home-discover-viewall {
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+  }
+
+  .home-discover {
+    margin-right: 40px;
+    font-size: 18px;
+  }
+
+  .home-viewall {
+    font-size: 9px;
+    background: linear-gradient(to right, #ee8cc2, #8069e6, #f085c0);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+
+  /* CONTAINER ALBUMS LIST */
+  .container-home-albums {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(5, 200px);
+    margin: 30px auto;
+    justify-content: center;
+  }
+
+  .container-albums {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+    justify-content: center;
+    margin: 5px 25px;
+  }
+
+  .container-albums a {
+    color: #f1f1f1;
+  }
+
+  .container-albums, .albums-name-artist {
+    display: flex;
+  }
+
+  /*ALBUMS NAME CONTAINER*/
+  .albums-name-artist {
+    max-width: 110px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+  
+  /* ALBUMS IMG */
+  .albums-img {
+    width: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: #0a0b0cab 0px 8px 24px;
+  }
+
+  
+  
+  /* ALBUMS NAME */
+  .albums-name, .albums-artist {
+    font-size: 9px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    color: #f1f1f1;
+  }
+  
+  .albums-artist {
+    font-weight: 300;
+  }
+  
+}

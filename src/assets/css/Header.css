@@ -1,0 +1,58 @@
+body {
+  text-decoration: none;
+}
+
+.container-header {
+  background-color: #1a1c1e;
+}
+
+.header-logo {
+  text-transform: uppercase;
+  color: #f1f1f1;
+}
+
+.container-nav a {
+  color: #7e8189;
+}
+
+.container-nav a:hover {
+color: #ff72c0a8;
+}
+
+.container-nav a:active {
+  transform: scale(0.96);
+}
+
+.nav-user-name {
+  color: #7e8189;
+}
+
+@media screen and (max-width: 420px) {
+  .container-header,
+  .container-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .container-header {
+    padding: 20px;
+  }
+
+  .nav-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-nav-album,
+  .container-nav-favorites,
+  .nav-user {
+    margin-left: 25px;
+  }
+
+  .nav-user-name {
+    font-size: 6px;
+  }
+}

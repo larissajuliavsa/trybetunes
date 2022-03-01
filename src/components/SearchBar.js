@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { BiSearch } from 'react-icons/bi';
+import '../assets/css/SearchBar.css';
 import Loading from './Loading';
 
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
@@ -64,21 +66,26 @@ export default class SearchBar extends Component {
           <Loading />
         ) : (
           <div>
-            <input
-              type="text"
-              name="name"
-              placeholder="eg Rolling Stones or Jack White"
-              onChange={ this.inputChange }
-              data-testid="search-artist-input"
-            />
-            <button
-              type="submit"
-              disabled={ name.length < MIN_LENGTH }
-              onClick={ this.searchBand }
-              data-testid="search-artist-button"
-            >
-              pesquisar
-            </button>
+            <div className="container-search">
+              <input
+                type="text"
+                className="search-input"
+                name="name"
+                placeholder="eg Rolling Stones or Jack White"
+                onChange={ this.inputChange }
+                data-testid="search-artist-input"
+              />
+              <button
+                className="search-btn"
+                type="submit"
+                disabled={ name.length < MIN_LENGTH }
+                onClick={ this.searchBand }
+                data-testid="search-artist-button"
+              >
+                <BiSearch />
+                {/* search */}
+              </button>
+            </div>
             {notFound && <p>Nenhum álbum foi encontrado</p>}
             {searchList.length > 0 && (
               <section>
