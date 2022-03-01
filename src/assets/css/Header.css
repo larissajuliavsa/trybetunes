@@ -15,12 +15,12 @@ body {
   color: #7e8189;
 }
 
-.container-nav a:hover {
-color: #ff72c0a8;
+.container-nav-album:hover, .container-nav-favorites:hover, .container-nav-profile:hover {
+  color: #f1f1f1;
 }
 
 .container-nav a:active {
-  transform: scale(0.96);
+  transform: scale(0.85);
 }
 
 .nav-user-name {
@@ -37,7 +37,7 @@ color: #ff72c0a8;
   }
 
   .container-header {
-    padding: 20px;
+    padding: 20px 0;
   }
 
   .nav-user {

@@ -143,3 +143,50 @@ export default class Landing extends Component {
     );
   }
 }
+
+/*
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+
+<Swiper className="mySwiper">
+  {albums.map((list, index) => (
+    <SwiperSlide className="home-albums" key={ index }>
+      <Link to={ `/album/${list.id}` }>
+        <div className="container-albums">
+          <img
+            className="albums-img"
+            src={ list.artWork }
+            alt={ list.collectionName }
+          />
+          <div className="albums-name-artist">
+            <p className="albums-name">{list.collectionName}</p>
+            <p className="albums-artist">{list.artistName}</p>
+          </div>
+        </div>
+      </Link>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+{albums.map((list, index) => (
+  <div className="home-albums" key={ index }>
+    <Link to={ `/album/${list.id}` }>
+      <div className="container-albums">
+        <img
+          className="albums-img"
+          src={ list.artWork }
+          alt={ list.collectionName }
+        />
+        <div className="albums-name-artist">
+          <p className="albums-name">{list.collectionName}</p>
+          <p className="albums-artist">{list.artistName}</p>
+        </div>
+      </div>
+    </Link>
+  </div>
+))}
+*/
