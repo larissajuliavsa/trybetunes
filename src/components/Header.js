@@ -49,7 +49,9 @@ export default class Header extends Component {
               className="container-header-logo-user"
               data-testid="header-component"
             >
-              <h2 className="header-logo">Trybetunes</h2>
+              <Link to="/home">
+                <h2 className="header-logo">Trybetunes</h2>
+              </Link>
             </header>
             <nav className="container-nav">
               <Link

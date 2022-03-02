@@ -1,8 +1,8 @@
 @media screen and (max-width: 420px) {
   
-  body {
+  /* body {
     text-transform: uppercase;    
-  }
+  } */
   
   a {
     text-decoration: none;
@@ -12,6 +12,7 @@
   /* CONTAINER MAIN */
   .container-home {
     margin: 30px auto;
+    padding: 10px;
     border-radius: 12px;
     width: 80%;
     background-color: #202427;
@@ -60,7 +61,7 @@
   .container-home-albums {
     display: grid;
     grid-template-columns: repeat(2, 140px);
-    grid-template-rows: repeat(5, 200px);
+    grid-template-rows: repeat(3, 200px);
     margin: 30px auto;
     justify-content: center;
   }

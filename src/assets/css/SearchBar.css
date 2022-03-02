@@ -49,4 +49,61 @@
   .search-btn:active {
     transform: scale(0.96);
   }
+
+  .container-notFound, .container-results-text {
+    margin: 30px auto;
+    /* text-transform: capitalize; */
+    font-size: 18px;
+    text-align: center;
+    padding: 0 20px;
+    color: #f1f1f1;
+  }
+
+  /*CONTAINER RESULTS*/
+
+  .container-results-albums {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    /* grid-template-rows: repeat(3, 200px); */
+    margin: 30px auto;
+    justify-content: center;
+  }
+
+  .container-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+    justify-content: center;
+    margin: 10px 25px;
+    background-image: linear-gradient(to bottom, #2b2e33, #282b30, #25282d, #23262a, #202327);    
+    border-radius: 5px;
+    padding: 5%;
+  }
+
+  .container-results:hover {
+    background-image: linear-gradient(to bottom, #3e4248, #363a3f, #2f3237, #272a2f, #202327);
+  }
+
+  .results-img {
+    width: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: #0a0b0cab 0px 8px 24px;
+  }
+
+  .results-album-name {
+    max-width: 110px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    font-size: 9px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    color: #f1f1f1;
+    font-weight: 500;
+  }
 }

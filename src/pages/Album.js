@@ -6,6 +6,8 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
+import '../assets/css/Album.css';
+
 /*
   O meu código estava dando erros que eu não sabia identificar o motivo, pedi ajuda através de uma thread no slack da turma. O Lucas Petzinger e a Rosalia Oliveira me ajudaram a arrumar o código e apontar melhorias neles, obrigada <3
 */
@@ -70,13 +72,27 @@ export default class Album extends Component {
     return (
       <div data-testid="page-album">
         <Header />
-        <div>
+        <div className="container-album-page">
           {musics.length > 0 && (
-            <>
-              <img src={ musics[0].artworkUrl100 } alt={ musics[0].collectionName } />
-              <p data-testid="artist-name">{musics[0].artistName}</p>
-              <p data-testid="album-name">{musics[0].collectionName}</p>
-            </>
+            <section className="container-album">
+              <img
+                className="container-album-cover-img"
+                src={ musics[0].artworkUrl100 }
+                alt={ musics[0].collectionName }
+              />
+              <p
+                className="container-album-cover-artist"
+                data-testid="artist-name"
+              >
+                {musics[0].artistName}
+              </p>
+              <p
+                className="container-album-cover-name"
+                data-testid="album-name"
+              >
+                {musics[0].collectionName}
+              </p>
+            </section>
           )}
           {musics.map(
             (music, index) => index > 0 && (

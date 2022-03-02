@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  addSong,
-  removeSong,
-} from '../services/favoriteSongsAPI';
+import { HiHeart, HiOutlineHeart } from 'react-icons/hi';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
+
+import '../assets/css/MusicCard.css';
 
 export default class MusicCard extends Component {
   constructor() {
@@ -81,23 +81,40 @@ export default class MusicCard extends Component {
         {isLoading ? (
           <Loading />
         ) : (
-          <>
-            <p>{trackName}</p>
-            <audio data-testid="audio-component" src={ previewUrl } controls>
-              <track kind="captions" label={ trackName } />
-            </audio>
-            <label htmlFor={ trackId }>
-              Favorita
-              <input
-                id={ trackId }
-                data-testid={ `checkbox-music-${trackId}` }
-                type="checkbox"
-                name="checkbox"
-                onChange={ this.handleChangeClick }
-                checked={ isChecked }
+          <section className="container-track-list">
+            <div className="container-track-favorite">
+              <p className="track-name">{trackName}</p>
+              <label className="container-label-favorite" htmlFor={ trackId }>
+                <p className="label-favorite">Favorite</p>
+                <input
+                  className="label-checkbox"
+                  id={ trackId }
+                  data-testid={ `checkbox-music-${trackId}` }
+                  type="checkbox"
+                  name="checkbox"
+                  onChange={ this.handleChangeClick }
+                  checked={ isChecked }
+                />
+                {isChecked ? (
+                  <HiHeart className="heartFull" />
+                ) : (
+                  <HiOutlineHeart className="heartEmpty" />
+                )}
+              </label>
+            </div>
+            <audio
+              className="track-audio"
+              data-testid="audio-component"
+              src={ previewUrl }
+              controls
+            >
+              <track
+                className="track-track"
+                kind="captions"
+                label={ trackName }
               />
-            </label>
-          </>
+            </audio>
+          </section>
         )}
       </div>
     );

@@ -5,6 +5,7 @@ import '../assets/css/SearchBar.css';
 import Loading from './Loading';
 
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+// import Landing from './Landing';
 
 export default class SearchBar extends Component {
   constructor() {
@@ -83,29 +84,40 @@ export default class SearchBar extends Component {
                 data-testid="search-artist-button"
               >
                 <BiSearch />
-                {/* search */}
               </button>
             </div>
-            {notFound && <p>Nenhum álbum foi encontrado</p>}
+            {notFound && (
+              <p className="container-notFound">
+                Sorry, I didnt find what you are looking for :/
+              </p>
+            )}
             {searchList.length > 0 && (
               <section>
-                <p>{`Resultado de álbuns de: ${keepName}`}</p>
-                {searchList.map((search) => (
-                  <div key={ search.collectionId }>
-                    <Link
-                      data-testid={ `link-to-album-${search.collectionId}` }
-                      to={ `/album/${search.collectionId}` }
-                    >
-                      <img
-                        src={ search.artworkUrl100 }
-                        alt={ search.collectionName }
-                      />
-                      <p>{search.collectionName}</p>
-                    </Link>
-                  </div>
-                ))}
+                <p className="container-results-text">{`Some results of ${keepName}`}</p>
+                <div className="container-results-albums">
+                  {searchList.map((search) => (
+                    <div key={ search.collectionId }>
+                      <Link
+                        data-testid={ `link-to-album-${search.collectionId}` }
+                        to={ `/album/${search.collectionId}` }
+                      >
+                        <div className="container-results">
+                          <img
+                            className="results-img"
+                            src={ search.artworkUrl100 }
+                            alt={ search.collectionName }
+                          />
+                          <p className="results-album-name">
+                            {search.collectionName}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </section>
             )}
+            {/* {this.searchBand && <Landing style={ { visibility: 'hidden' } } /> } */}
           </div>
         )}
       </div>

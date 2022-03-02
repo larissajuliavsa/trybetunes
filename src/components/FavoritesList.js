@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import MusicCard from './MusicCard';
 
+import '../assets/css/FavoritesList.css';
+import Loading from './Loading';
+
 export default class FavoritesList extends Component {
   constructor() {
     super();
@@ -38,10 +41,10 @@ export default class FavoritesList extends Component {
   render() {
     const { favorites, isLoading } = this.state;
     return (
-      <>
-        <p>Here is your favorites</p>
+      <div className="container-favorites-list">
+        <p className="favorites-text">Here is your favorites</p>
         {isLoading ? (
-          <p>Carregando</p>
+          <Loading />
         ) : (
           favorites.map((list) => (
             <MusicCard
@@ -55,7 +58,7 @@ export default class FavoritesList extends Component {
             />
           ))
         )}
-      </>
+      </div>
     );
   }
 }

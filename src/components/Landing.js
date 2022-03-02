@@ -12,14 +12,10 @@ import SearchBar from './SearchBar';
 import latestsHits from '../assets/css/img/latestsHits.png';
 import MeganTheeStallionFever from '../assets/css/img/MeganTheeStallionFever.jpg';
 import SZACtrl from '../assets/css/img/SZACtrl.jpg';
-import DuaLipaFutureNostalgia from '../assets/css/img/DuaLipaFutureNostalgia.jpg';
 import SnohAalegra from '../assets/css/img/SnohAalegra.jpg';
-import BeyonceDangerouslyinLove from '../assets/css/img/BeyonceDangerouslyinLove.jpg';
 import AriLennoxSheaButterBaby from '../assets/css/img/AriLennoxSheaButterBaby.jpg';
 import JazmineSullivanHeauxTales from '../assets/css/img/JazmineSullivanHeauxTales.jpg';
-import Saweetie from '../assets/css/img/Saweetie.jpg';
 import ChloeHalleUngodlyHour from '../assets/css/img/ChloeHalleUngodlyHour.jpg';
-import RihannaAnti from '../assets/css/img/RihannaAnti.jpg';
 
 export default class Landing extends Component {
   render() {
@@ -41,28 +37,12 @@ export default class Landing extends Component {
         collectionName: 'Ctrl',
       },
       {
-        id: '1538003494',
-        artistName: 'Dua Lipa',
-        artWork: DuaLipaFutureNostalgia,
-        // artWork:
-        //   'https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/51/27/9c/51279c15-552e-3885-a234-fedefd3a0082/source/100x100bb.jpg',
-        collectionName: 'Future Nostalgia',
-      },
-      {
         id: '1569917231',
         artistName: 'Snoh Aalegra',
         artWork: SnohAalegra,
         // artWork:
         //   'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8a/36/b4/8a36b42e-c1fd-cd8d-4e80-a17df149b2d2/source/100x100bb.jpg',
         collectionName: 'TEMPORARY HIGHS IN THE VIOLET SKIES',
-      },
-      {
-        id: '201274359',
-        artistName: 'Beyoncé',
-        // artWork:
-        //   'https://is1-ssl.mzstatic.com/image/thumb/Music/v4/18/93/6d/18936d85-8f6b-7597-87ef-62c4c5211298/source/100x100bb.jpg',
-        artWork: BeyonceDangerouslyinLove,
-        collectionName: 'Dangerously in Love',
       },
       {
         id: '1462482035',
@@ -81,28 +61,12 @@ export default class Landing extends Component {
         collectionName: 'Heaux Tales',
       },
       {
-        id: '1542954264',
-        artistName: 'Saweetie',
-        // artWork:
-        //   'https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/fc/8c/8f/fc8c8fb1-281e-1c10-2032-7c707956b359/source/100x100bb.jpg',
-        artWork: Saweetie,
-        collectionName: 'Best Friend (feat. Doja Cat)',
-      },
-      {
         id: '1512283811',
         artistName: 'Chloe x Halle',
         // artWork:
         //   'https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/72/ee/3c/72ee3c43-729c-3d10-89c9-c778940ce615/source/100x100bb.jpg',
         artWork: ChloeHalleUngodlyHour,
         collectionName: 'Ungodly Hour',
-      },
-      {
-        id: '1440933869',
-        artistName: 'Rihanna',
-        // artWork:
-        //   'https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/8d/62/cf/8d62cfde-6ff3-c46c-55be-61c67e9e3879/source/100x100bb.jpg',
-        artWork: RihannaAnti,
-        collectionName: 'ANTI (Deluxe)',
       },
     ];
     return (
