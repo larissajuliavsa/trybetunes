@@ -1,107 +1,150 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Rubik', sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-  background-color: #111315;
-}
 /* CONTAINER FORM */
-
 .page-login {
-  text-transform: uppercase;
   background-color: #202427;
-  color: #F1F1F1;
   border-radius: 10px;
+  color: #F1F1F1;
+  text-transform: uppercase;
+}
+
+.login-logo {
+  font-size: 14px;
 }
 
 /* INPUTS */
-
-.login-name,
-.login-password {
+.login-name, .login-password {
   background-color: #2B2F33;
-  border-radius: 10px;
   border: 1px solid #76767698;
+  /* border-radius: 10px; */
   color: #f1f1f1af;
 }
 
 /* BUTTON */
-
 .login-btn {
-  border: none;
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 10px;
-  color: #F1F1F1;
-  letter-spacing: 2px;
-  cursor: pointer;
   background: linear-gradient(90deg, #755bea, #ff72c0);
+  border: none;
+  color: #F1F1F1;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
-
-.login-btn:hover {
-  box-shadow: #755bea27 0 0 30px;
-  transition-duration: 2s;
-}
-
-.login-btn:active {
-  transform: scale(.96);
-}
-
 
 .login-btn:disabled {
   cursor: not-allowed;
-  
 }
 
-@media screen and (max-width: 420px) {
+.login-btn:hover {
+  transform: translateY(-3px);
+  transition: 0.3s ease-in-out;
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+@media screen and ( min-width : 920px ) {
+
   .page-login {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    /* position: absolute;
-    top: 20%;
-    left: 10%; */
-    margin: 50% auto;
-    width: 50%;
-    padding: 20% 10%;    
-    
+    margin: 5% auto;
+    padding: 5%;
+    width: 20%;
   }
 
   .login-logo {
-    font-size: 2em;
-    text-align: center;
+    font-size: 1.6rem;
     margin-bottom: 50px;
-  }
-
-  div p {
-    font-weight: 500;
+    text-align: center;
   }
 
   .login-name, .login-password {
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 5%;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    padding: 6px 10px;
   }
 
-  .container-login-btn {
+  .login-label-name p, .login-label-password p {
+    margin-left: 5px;
+  }
+
+  .login-btn {
+    border-radius: 6px;
+    font-size: 0.8rem;
+    padding: 8px 20px;
+  }
+}
+
+@media screen and ( min-width : 420px ) and ( max-width : 920px ) {
+
+  .page-login {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
+    margin: 30% auto;
+    padding: 20% 10%;
+    width: 35%;
   }
-  
+
+  .login-logo {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .login-name, .login-password {
+    border-radius: 6px;
+    margin-bottom: 30px;
+    margin-top: 8px;
+    padding: 6px 10px;
+  }
+
+  .login-label-name p, .login-label-password p {
+    margin-left: 5px;
+  }
+
   .login-btn {
-    width: 100%;
-    margin: 5px auto;
-    padding: 5% 37%;
+    border-radius: 6px;
+    font-size: 0.5rem;
+    padding: 8px 20px;
   }
+}
+
+@media screen and ( max-width : 420px ) {
+
+  .page-login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 50% auto;
+    padding: 20% 10%;
+    width: 50%;
+  }
+
+  .login-logo {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .login-name, .login-password {
+    border-radius: 6px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    padding: 6px 10px;
+  }
+
+  .login-label-name p, .login-label-password p {
+    margin-left: 5px;
+  }
+
+  .login-btn {
+    border-radius: 6px;
+    font-size: 0.5rem;
+    padding: 8px 20px;
+  }
+
 }
