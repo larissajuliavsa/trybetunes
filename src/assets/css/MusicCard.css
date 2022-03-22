@@ -1,9 +1,12 @@
-@media screen and (max-width: 420px) {
+
+@media screen and ( min-width : 920px ) {
+
   .track-name {
+    color: #f1f1f1;
+    font-size: 16px;
+    margin-right: 12px;
     padding: 5px;
     width: 120px;
-    margin-right: 12px;
-    color: #f1f1f1;
   }
 
   .label-favorite {
@@ -11,18 +14,18 @@
   }
 
   .container-track-list {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 15px 0;
   }
 
   .container-track-favorite {
+    align-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
     margin: 10px;
   }
 
@@ -31,16 +34,112 @@
   }
 
   .heartFull, .heartEmpty {
+    color: #fa43e2ce;
+    cursor: pointer;
+    font-size: 18px;
     margin: 0 auto;
     max-width: max-content;
-    cursor: pointer;
-    color: #fa43e2ce;
   }
 
   .track-audio {
-    box-shadow: #0a0b0cc4 0px 8px 24px;
     border-radius: 50px;
+    box-shadow: #0a0b0cc4 0 8px 24px;
     color: #f1f1f1;
   }
+}
 
+@media screen and ( min-width : 420px ) and ( max-width : 920px ) {
+
+  .track-name {
+    color: #f1f1f1;
+    font-size: 16px;
+    margin-right: 12px;
+    padding: 5px;
+    width: 120px;
+  }
+
+  .label-favorite {
+    display: none;
+  }
+
+  .container-track-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .container-track-favorite {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  .label-checkbox {
+    display: none;
+  }
+
+  .heartFull, .heartEmpty {
+    color: #fa43e2ce;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: max-content;
+  }
+
+  .track-audio {
+    border-radius: 50px;
+    box-shadow: #0a0b0cc4 0 8px 24px;
+    color: #f1f1f1;
+  }
+}
+
+@media screen and ( max-width : 420px ) {
+
+  .track-name {
+    color: #f1f1f1;
+    margin-right: 12px;
+    padding: 5px;
+    width: 120px;
+  }
+
+  .label-favorite {
+    display: none;
+  }
+
+  .container-track-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .container-track-favorite {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  .label-checkbox {
+    display: none;
+  }
+
+  .heartFull, .heartEmpty {
+    color: #fa43e2ce;
+    cursor: pointer;
+    margin: 0 auto;
+    max-width: max-content;
+  }
+
+  .track-audio {
+    border-radius: 50px;
+    box-shadow: #0a0b0cc4 0 8px 24px;
+    color: #f1f1f1;
+  }
 }

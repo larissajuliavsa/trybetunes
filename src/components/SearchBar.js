@@ -5,7 +5,6 @@ import '../assets/css/SearchBar.css';
 import Loading from './Loading';
 
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
-// import Landing from './Landing';
 
 export default class SearchBar extends Component {
   constructor() {
@@ -21,10 +20,6 @@ export default class SearchBar extends Component {
 
     this.inputChange = this.inputChange.bind(this);
     this.searchBand = this.searchBand.bind(this);
-  }
-
-  componentDidMount() {
-    // this.searchBand();
   }
 
   inputChange({ target }) {
@@ -117,7 +112,6 @@ export default class SearchBar extends Component {
                 </div>
               </section>
             )}
-            {/* {this.searchBand && <Landing style={ { visibility: 'hidden' } } /> } */}
           </div>
         )}
       </div>

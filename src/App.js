@@ -6,9 +6,11 @@ import Search from './pages/Search';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
-import ProfileEdit from './pages/ProfileEdit';
+// import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
+
+import './assets/css/App.css';
 
 class App extends React.Component {
   render() {
@@ -21,7 +23,7 @@ class App extends React.Component {
           <Route exact path="/favorites" component={ Favorites } />
           <Route exact path="/home" component={ Home } />
           <Route exact path="/profile" component={ Profile } />
-          <Route exact path="/profile/edit" component={ ProfileEdit } />
+          {/* <Route exact path="/profile/edit" component={ ProfileEdit } /> */}
           <Route path="*" component={ NotFound } />
         </Switch>
       </BrowserRouter>

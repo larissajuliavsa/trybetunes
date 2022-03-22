@@ -72,51 +72,45 @@ export default class Login extends Component {
         {isLoading ? (
           <Loading />
         ) : (
-          <div className="page-login" data-testid="page-login">
+          <main className="page-login" data-testid="page-login">
             <h1 className="login-logo">Trybetunes</h1>
             <form className="container-login">
-              <div>
-                <label className="login-label-name" htmlFor="name">
-                  <p>User</p>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={ name }
-                    onChange={ this.onInputChange }
-                    data-testid="login-name-input"
-                    className="login-name"
-                  />
-                </label>
-              </div>
-              <div>
-                <label className="login-label-password" htmlFor="password">
-                  <p>Password</p>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    value={ password }
-                    onChange={ this.onInputChange }
-                    data-testid="login-password-input"
-                    className="login-password"
-                  />
-                </label>
-              </div>
-              <div className="container-login-btn">
-                <button
-                  type="submit"
-                  disabled={ disable }
-                  onClick={ this.onSaveButtonClick }
-                  data-testid="login-submit-button"
-                  className="login-btn"
-                >
-                  Enter
-                </button>
-                {saved && <Redirect to="/home" />}
-              </div>
+              <label className="login-label-name" htmlFor="name">
+                <p>User</p>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={ name }
+                  onChange={ this.onInputChange }
+                  data-testid="login-name-input"
+                  className="login-name"
+                />
+              </label>
+              <label className="login-label-password" htmlFor="password">
+                <p>Password</p>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={ password }
+                  onChange={ this.onInputChange }
+                  data-testid="login-password-input"
+                  className="login-password"
+                />
+              </label>
             </form>
-          </div>
+            <button
+              type="submit"
+              disabled={ disable }
+              onClick={ this.onSaveButtonClick }
+              data-testid="login-submit-button"
+              className="login-btn"
+            >
+              Enter
+            </button>
+            {saved && <Redirect to="/home" />}
+          </main>
         )}
       </div>
     );

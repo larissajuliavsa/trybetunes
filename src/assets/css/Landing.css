@@ -1,117 +1,244 @@
-@media screen and (max-width: 420px) {
-  
-  /* body {
-    text-transform: uppercase;    
-  } */
-  
-  a {
-    text-decoration: none;
-    cursor: pointer;
-  }
+/* CONTAINER MAIN */
+.container-home {
+  background-color: #202427;
+}
 
-  /* CONTAINER MAIN */
+.container-home-search-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-home-search-img p {
+  color: #f1f1f1;
+}
+
+.home-img {
+  box-shadow: #0a0b0c64 0 8px 24px;
+}
+
+.home-discover-viewall {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.home-viewall {
+  background: linear-gradient(to right, #ee8cc2, #8c76eb, #f085c0);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.container-home-albums {
+  display: grid;
+  justify-content: center;
+}
+
+.container-albums {
+  align-items: center;
+  background-image: linear-gradient(to bottom, #2b2e33, #282b30, #25282d, #23262a, #202327);    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: fit-content;
+}
+
+.container-albums:hover {
+  background-image: linear-gradient(to bottom, #3e4248, #363a3f, #2f3237, #272a2f, #202327);
+}
+
+.albums-name-artist {
+  align-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.albums-img {
+  box-shadow: #0a0b0cab 0 8px 24px;
+  object-fit: cover;
+}
+
+.albums-name, .albums-artist {
+  color: #f1f1f1;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media screen and ( min-width : 920px ) {
+
   .container-home {
+    border-radius: 12px;
     margin: 30px auto;
     padding: 10px;
-    border-radius: 12px;
-    width: 80%;
-    background-color: #202427;
-  }
-  
-  /* SEARCHBAR LATEST'S HITS */
-  .container-home-search-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .container-home-search-img p {
-    color: #f1f1f1;
+    width: 70%;
   }
 
   .home-img {
-    width: 80%;
-    margin: 25px auto;
     border-radius: 12px;
-    box-shadow: #0a0b0c64 0px 8px 24px;
+    margin: 25px auto;
+    width: 50%;
+  }
+
+  .home-discover-viewall {
+    margin: 20px auto;
+  }
+
+  .home-discover {
+    font-size: 24px;
+    margin-right: 40px;
+  }
+
+  .home-viewall {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .container-home-albums {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 300px);
+    margin: 30px auto;
+  }
+
+  .container-albums {
+    border-radius: 5px;
+    margin: 5px 35px;
+    padding: 15px 20px;
+  }
+
+  .albums-name-artist {
+    max-width: 110px;
+  }
+
+  .albums-img {
+    border-radius: 5px;
+    width: 100px;
+  }
+
+  .albums-name, .albums-artist {
+    font-size: 14px;
+    margin-top: 18px;
+  }
+
+  .albums-artist {
+    font-weight: 300;
+  }
+}
+
+@media screen and ( min-width : 420px ) and ( max-width : 920px ) {
+
+  .container-home {
+    border-radius: 12px;
+    margin: 30px auto;
+    padding: 10px;
+    width: 80%;
+  }
+
+  .home-img {
+    border-radius: 12px;
+    margin: 25px auto;
+    width: 60%;
   }
 
   .home-discover-viewall {
     margin: 0 auto;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    text-transform: capitalize;
   }
 
   .home-discover {
-    margin-right: 40px;
     font-size: 18px;
+    margin-right: 40px;
   }
 
   .home-viewall {
     font-size: 9px;
-    background: linear-gradient(to right, #ee8cc2, #8c76eb, #f085c0);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
   }
 
-
-  /* CONTAINER ALBUMS LIST */  
   .container-home-albums {
-    display: grid;
-    grid-template-columns: repeat(2, 140px);
-    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(2, 200px);
     margin: 30px auto;
-    justify-content: center;
   }
 
   .container-albums {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: fit-content;
-    justify-content: center;
-    margin: 5px 25px;
-    background-image: linear-gradient(to bottom, #2b2e33, #282b30, #25282d, #23262a, #202327);    
     border-radius: 5px;
+    margin: 5px 25px;
     padding: 5%;
   }
 
-  .container-albums:hover {
-    background-image: linear-gradient(to bottom, #3e4248, #363a3f, #2f3237, #272a2f, #202327);
-  }
-
-  /*ALBUMS NAME CONTAINER*/
   .albums-name-artist {
     max-width: 110px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-  }
-  
-  /* ALBUMS IMG */
-  .albums-img {
-    width: 70px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: #0a0b0cab 0px 8px 24px;
   }
 
-  
-  
-  /* ALBUMS NAME */
+  .albums-img {
+    border-radius: 5px;
+    width: 70px;
+  }
+
   .albums-name, .albums-artist {
     font-size: 9px;
-    text-align: center;
-    letter-spacing: 1px;
     margin-top: 8px;
-    color: #f1f1f1;
   }
-  
+
   .albums-artist {
     font-weight: 300;
   }
-  
+}
+
+@media screen and ( max-width : 420px ) {
+
+  .container-home {
+    border-radius: 12px;
+    margin: 30px auto;
+    padding: 10px;
+    width: 80%;
+  }
+
+  .home-img {
+    border-radius: 12px;
+    margin: 25px auto;
+    width: 80%;
+  }
+
+  .home-discover-viewall {
+    margin: 0 auto;
+  }
+
+  .home-discover {
+    font-size: 18px;
+    margin-right: 40px;
+  }
+
+  .home-viewall {
+    font-size: 9px;
+  }
+
+  .container-home-albums {
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(3, 200px);
+    margin: 30px auto;
+  }
+
+  .container-albums {
+    border-radius: 5px;
+    margin: 5px 25px;
+    padding: 5%;
+  }
+
+  .albums-name-artist {
+    max-width: 110px;
+  }
+
+  .albums-img {
+    border-radius: 5px;
+    width: 70px;
+  }
+
+  .albums-name, .albums-artist {
+    font-size: 9px;
+    margin-top: 8px;
+  }
+
+  .albums-artist {
+    font-weight: 300;
+  }
 }

@@ -1,109 +1,244 @@
-@media screen and (max-width: 420px) {
+/* stylelint-disable max-line-length */
+
+/* stylelint-disable length-zero-no-unit */
+.container-search {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-input {
+  background-color: #2b2f33;
+  border: none;
+  box-shadow: #0a0b0c54 0px 8px 24px;
+  color: #f1f1f1af;
+}
+
+.search-btn {
+  background: linear-gradient(90deg, #755bea, #ff72c0);
+  border: none;
+  border-radius: 50%;
+  box-shadow: #0a0b0c54 0 8px 24px;
+  color: #f1f1f1af;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.search-btn:hover {
+  box-shadow: #755bea27 0 0 30px;
+  transform: translateY(-3px);
+  transition: 0.3s ease-in-out;
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+.container-notFound, .container-results-text {
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.container-results-albums {
+  display: grid;
+  justify-content: center;
+}
+
+.container-results {
+  align-items: center;
+  background-image: linear-gradient(to bottom, #2b2e33, #282b30, #25282d, #23262a, #202327);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: fit-content;
+}
+
+.container-results:hover {
+  background-image: linear-gradient(to bottom, #3e4248, #363a3f, #2f3237, #272a2f, #202327);
+}
+
+.results-img {
+  box-shadow: #0a0b0cab 0 8px 24px;
+  object-fit: cover;
+}
+
+.results-album-name {
+  align-content: center;
+  align-items: center;
+  color: #f1f1f1;
+  flex-flow: column wrap;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media screen and ( min-width : 920px ) {
+
   .container-search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     padding: 10px;
     width: 80%;
-    margin: 0 auto;
   }
 
   .search-input {
-    background-color: #2b2f33;
-    border: none;
-    /* border: 1px solid #76767698; */
-    color: #f1f1f1af;
     border-radius: 8px;
-    padding: 5px;
-    width: 220px;
     height: 20px;
-    margin-right: 8px;
+    margin-right: 10px;
     margin-top: 10px;
-    box-shadow: #0a0b0c54 0px 8px 24px;
+    padding: 5px 8px;
+    width: 280px;
   }
 
   .search-btn {
-    margin-top: 10px;
-    border: none;
-    font-weight: 600;
-    color: #f1f1f1af;
-    text-transform: uppercase;
+    border-radius: 50%;
     font-size: 14px;
-    letter-spacing: 2px;
-    text-align: center;
-    cursor: pointer;
-    background: linear-gradient(90deg, #755bea, #ff72c0);
+    height: 25px;
+    margin-top: 10px;
     padding: 5px;
     width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    box-shadow: #0a0b0c54 0px 8px 24px;
-  }
-
-  .search-btn:hover {
-    box-shadow: #755bea27 0 0 30px;
-    transition-duration: 0.1s;
-  }
-
-  .search-btn:active {
-    transform: scale(0.96);
   }
 
   .container-notFound, .container-results-text {
-    margin: 30px auto;
-    /* text-transform: capitalize; */
     font-size: 18px;
-    text-align: center;
+    margin: 30px auto;
     padding: 0 20px;
-    color: #f1f1f1;
   }
 
-  /*CONTAINER RESULTS*/
-
   .container-results-albums {
-    display: grid;
-    grid-template-columns: repeat(2, 140px);
-    /* grid-template-rows: repeat(3, 200px); */
+    grid-template-columns: repeat(3, 200px);
     margin: 30px auto;
-    justify-content: center;
   }
 
   .container-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: fit-content;
-    justify-content: center;
-    margin: 10px 25px;
-    background-image: linear-gradient(to bottom, #2b2e33, #282b30, #25282d, #23262a, #202327);    
     border-radius: 5px;
-    padding: 5%;
-  }
-
-  .container-results:hover {
-    background-image: linear-gradient(to bottom, #3e4248, #363a3f, #2f3237, #272a2f, #202327);
+    margin: 5px 35px;
+    padding: 15px 20px;
   }
 
   .results-img {
-    width: 70px;
-    object-fit: cover;
     border-radius: 5px;
-    box-shadow: #0a0b0cab 0px 8px 24px;
+    width: 100px;
   }
 
   .results-album-name {
-    max-width: 110px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 18px;
+    max-width: 100px;
+  }
+}
 
+@media screen and ( min-width : 420px ) and ( max-width : 920px ) {
+
+  .container-search {
+    margin: 0 auto;
+    padding: 10px;
+    width: 80%;
+  }
+
+  .search-input {
+    border-radius: 8px;
+    height: 20px;
+    margin-right: 8px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 260px;
+  }
+
+  .search-btn {
+    border-radius: 50%;
+    font-size: 14px;
+    height: 25px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 25px;
+  }
+
+  .container-notFound, .container-results-text {
+    font-size: 18px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .container-results-albums {
+    grid-template-columns: repeat(3, 140px);
+    margin: 30px auto;
+  }
+
+  .container-results {
+    border-radius: 5px;
+    margin: 25px;
+    padding: 5%;
+  }
+
+  .results-img {
+    border-radius: 5px;
+    width: 70px;
+  }
+
+  .results-album-name {
     font-size: 9px;
-    text-align: center;
     letter-spacing: 1px;
     margin-top: 8px;
-    color: #f1f1f1;
-    font-weight: 500;
+    max-width: 110px;
+  }
+}
+
+@media screen and ( max-width : 420px ) {
+
+  .container-search {
+    margin: 0 auto;
+    padding: 10px;
+    width: 80%;
+  }
+
+  .search-input {
+    border-radius: 8px;
+    height: 20px;
+    margin-right: 8px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 220px;
+  }
+
+  .search-btn {
+    border-radius: 50%;
+    font-size: 14px;
+    height: 25px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 25px;
+  }
+
+  .container-notFound, .container-results-text {
+    font-size: 18px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .container-results-albums {
+    grid-template-columns: repeat(2, 140px);
+    margin: 30px auto;
+  }
+
+  .container-results {
+    border-radius: 5px;
+    margin: 10px 25px;
+    padding: 5%;
+  }
+
+  .results-img {
+    border-radius: 5px;
+    width: 70px;
+  }
+
+  .results-album-name {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    max-width: 110px;
   }
 }
