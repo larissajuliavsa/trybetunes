@@ -29,7 +29,7 @@ export default class Header extends Component {
   async loginName() {
     this.setState({ isLoading: true });
 
-    const userName = await getUser(); // por ser uma Promise, utilizei async/await
+    const userName = await getUser();
 
     this.setState({
       isLoading: false,

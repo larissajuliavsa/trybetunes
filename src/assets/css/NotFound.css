@@ -1,0 +1,38 @@
+.not-found {
+  align-items: center;
+  color: #f1f1f1;
+  font-size: 14px;
+  position: absolute;
+}
+
+@media screen and ( min-width : 920px ) {
+
+  .container-not-found {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .not-found {
+    font-size: 22px;
+    left: 50vw;
+    top: 50vh;
+  }
+}
+
+@media screen and ( min-width : 420px ) and ( max-width : 920px ) {
+
+  .not-found {
+    font-size: 22px;
+    left: 35vw;
+    top: 40vh;
+  }
+}
+
+@media screen and ( max-width : 420px ) {
+
+  .not-found {
+    font-size: 18px;
+    left: 25vw;
+    top: 35vh;
+  }
+}
