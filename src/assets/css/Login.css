@@ -23,6 +23,7 @@
   background: linear-gradient(90deg, #755bea, #ff72c0);
   border: none;
   color: #F1F1F1;
+  cursor: pointer;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
