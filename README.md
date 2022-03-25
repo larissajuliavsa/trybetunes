@@ -4,6 +4,8 @@
 <p align="center">Trybetunes is a music streaming, where the client is able to search, listen and favorite their songs. In this project, I used data from iTunes’s APIs, keeping your library always up to date. I developed this project through Trybe course, in Front End module.
 </p>
 
+<img src="./src/assets/css/img/trybetunes-preview.gif" />
+
 <h3 align="left">Skills</h3>
 
 - Make requests from an API
