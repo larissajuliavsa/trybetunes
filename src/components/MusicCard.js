@@ -49,7 +49,6 @@ export default class MusicCard extends Component {
       }
 
       await listFave();
-      // await unListFave(target);
 
       this.setState({
         isLoading: false,

@@ -18,13 +18,13 @@
   }
 
   .container-text-bar {
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
+    height: max-content;
     margin: 30px auto;
     padding: 40px 10px;
     width: 70%;
-    height: max-content;
   }
 
   .search-page-text {
@@ -33,6 +33,7 @@
 }
 
 @media screen and ( min-width : 420px ) and ( max-width : 920px ) {
+
   .container-search-page {
     display: flex;
     flex-direction: column;
@@ -72,4 +73,3 @@
     font-size: 18px;
   }
 }
-height: max-content;
