@@ -70,7 +70,7 @@ export default class Album extends Component {
     const { musics, favorites } = this.state;
 
     return (
-      <div data-testid="page-album">
+      <div className="container-album-flex" data-testid="page-album">
         <Header />
         <div className="container-album-page">
           {musics.length > 0 && (
